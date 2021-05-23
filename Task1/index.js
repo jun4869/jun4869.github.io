@@ -19,7 +19,7 @@ var init = function(){
   var geometry = new THREE.BoxGeometry(0.4, 0.4 ,2.5);
   var material = new THREE.MeshPhongMaterial({color:0xFF0000});
   var box = new THREE.Mesh(geometry, material);
-  box.position.set(0, 2, -3);
+  box.position.set(0, 3, -10);
   scene.add(box);
 
   var coneGeometry = new THREE.ConeGeometry( 0.42, 1, 3 ); 
@@ -67,7 +67,6 @@ var init = function(){
 
     box.rotation.x+= 0.013;
     box.rotation.y+= 0.018;
-    box.position.z-= 0.04;
     cone.position.z-= 0.03;
     sphere.rotation.x+= 0.02;
     sphere2.rotation.y+= 0.07;
