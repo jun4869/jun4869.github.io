@@ -29,10 +29,11 @@
   var bump = textureLoader.load("baseball.jpg");
   mat.bumpMap = bump;
   mat.bumpscale = 0.2;
-  var texture2 = textureLoader.load("soccer.jpg");
+  var textureLoader2 = new THREE.TextureLoader(); 
+  var texture2 = textureLoader2.load("soccer.jpg");
   var mat2 = new THREE.MeshPhongMaterial();
   mat2.map = texture;
-  var bump2 = textureLoader.load("soccer.jpg");
+  var bump2 = textureLoader2.load("soccer.jpg");
   mat2.bumpMap = bump2;
   mat2.bumpscale = 0.2;
 
@@ -63,6 +64,7 @@
 
 
     sphere.rotation.y += 0.01;
+    sphere.rotation.x += 0.01;
 
     renderer.render(scene, camera);
   };
