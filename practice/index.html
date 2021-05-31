@@ -28,24 +28,21 @@
  
   var sphereGeometry = new THREE.SphereGeometry( 0.8, 32, 32 ); 
   var sphere = new THREE.Mesh( sphereGeometry, mat );
-  sphere.position.set( 0, 0, -5 );
+  sphere.position.set( 0, 0, -2 );
   sphere.rotation.x = 0.2;
   scene.add( sphere );
 
 
   var directionalLight1 = new THREE.DirectionalLight(0xffffff);
   directionalLight1.position.set(1, 1, 1);
-  // シーンに追加
   scene.add(directionalLight1);
 
   var directionalLight2 = new THREE.DirectionalLight(0xffffff);
   directionalLight2.position.set(-10, 1, 1);
-  // シーンに追加
   scene.add(directionalLight2);
 
  var directionalLight3 = new THREE.DirectionalLight(0xffffff);
   directionalLight3.position.set(1, -10, 1);
-  // シーンに追加
   scene.add(directionalLight3);
 
   // 初回実行
