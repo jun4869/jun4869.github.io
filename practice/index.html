@@ -22,7 +22,7 @@
     var scene = new THREE.Scene();
   
   const camera = new THREE.PerspectiveCamera(45, width / height);
-  camera.position.set(0, 0, 300);
+  camera.position.set(0, 0, 500);
   const controls = new THREE.OrbitControls(camera,document.body);
 
  var textureLoader = new THREE.TextureLoader();  
@@ -43,8 +43,8 @@
   var sphereGeometry = new THREE.SphereGeometry( 0.8, 32, 32 ); 
   var sphere = new THREE.Mesh( sphereGeometry, mat );
   var sphere2 = new THREE.Mesh(sphereGeometry, mat2);
-  sphere.position.set( 1, 0, -5 );
-  sphere2.position.set( -1, 0, -5);
+  sphere.position.set( 1, 0, 300 );
+  sphere2.position.set( -1, 0, 300);
   sphere.rotation.x = 0.2;
   scene.add( sphere );
   scene.add( sphere2);
