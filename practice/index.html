@@ -22,7 +22,7 @@
     var scene = new THREE.Scene();
   
   const camera = new THREE.PerspectiveCamera(45, width / height);
-  camera.position.set(0, 0, 500);
+  camera.position.set(0, 0, 1000);
   const controls = new THREE.OrbitControls(camera,document.body);
 
  var textureLoader = new THREE.TextureLoader();  
@@ -43,8 +43,8 @@
   var sphereGeometry = new THREE.SphereGeometry( 0.8, 32, 32 ); 
   var sphere = new THREE.Mesh( sphereGeometry, mat );
   var sphere2 = new THREE.Mesh(sphereGeometry, mat2);
-  sphere.position.set( 1, 0, 300 );
-  sphere2.position.set( -1, 0, 300);
+  sphere.position.set( 1, 0, -5 );
+  sphere2.position.set( -1, 0, -5);
   sphere.rotation.x = 0.2;
   scene.add( sphere );
   scene.add( sphere2);
@@ -62,12 +62,23 @@
   directionalLight3.position.set(1, -10, 1);
   scene.add(directionalLight3);
 
+  var update = function() {
+    requestAnimationFrame(update);
+
+
+    sphere.rotation.y += 0.01;
+    sphere2.rotation.x += 0.01;
+
+    renderer.render(scene, camera);
+  };
+  update();
   tick();
   function tick() {
     renderer.render(scene, camera);
     requestAnimationFrame(tick);
   }
 }
+
   window.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
