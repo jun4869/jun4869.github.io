@@ -72,13 +72,12 @@
     renderer.render(scene, camera);
   };
   update();
-}
-
   tick();
   function tick() {
     renderer.render(scene, camera);
     requestAnimationFrame(tick);
   }
+}
   window.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
