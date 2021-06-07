@@ -43,23 +43,23 @@
   var sphereGeometry = new THREE.SphereGeometry( 0.8, 32, 32 ); 
   var sphere = new THREE.Mesh( sphereGeometry, mat );
   var sphere2 = new THREE.Mesh(sphereGeometry, mat2);
-  sphere.position.set( 100, 300, 300 );
-  sphere2.position.set( -100, 300, 300);
+  sphere.position.set( 1, 0, -5 );
+  sphere2.position.set( -1, 0, -5);
   sphere.rotation.x = 0.2;
   scene.add( sphere );
   scene.add( sphere2);
 
 
   var directionalLight1 = new THREE.DirectionalLight(0xffffff);
-  directionalLight1.position.set(100, 100, 100);
+  directionalLight1.position.set(1, 1, 1);
   scene.add(directionalLight1);
 
   var directionalLight2 = new THREE.DirectionalLight(0xffffff);
-  directionalLight2.position.set(-100, 100, 100);
+  directionalLight2.position.set(-10, 1, 1);
   scene.add(directionalLight2);
 
  var directionalLight3 = new THREE.DirectionalLight(0xffffff);
-  directionalLight3.position.set(100, -100, 100);
+  directionalLight3.position.set(1, -10, 1);
   scene.add(directionalLight3);
 
   var update = function() {
@@ -72,7 +72,6 @@
     renderer.render(scene, camera);
   };
   update();
-
   tick();
   function tick() {
     renderer.render(scene, camera);
