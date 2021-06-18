@@ -52,6 +52,22 @@ function init() {
   mat2.bumpMap = bump2;
   mat2.bumpscale = 0.2;
 
+  var textureLoader3 = new THREE.TextureLoader();  
+  var texture3 = textureLoader2.load("table_foot.jpg");
+  var mat3 = new THREE.MeshPhongMaterial();
+  mat3.map = texture3;
+  var bump3 = textureLoader.load("table_foot.jpg");
+  mat3.bumpMap = bump3;
+  mat3.bumpscale = 0.08;
+
+  var textureLoader4 = new THREE.TextureLoader();  
+  var texture4 = textureLoader4.load("wood.jpg");
+  var mat4 = new THREE.MeshPhongMaterial();
+  mat4.map = texture4;
+  var bump4 = textureLoader.load("wood.jpg");
+  mat4.bumpMap = bump4;
+  mat4.bumpscale = 0.03;
+
 // 平面を作成
 var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
 var plane = new THREE.Mesh(planeGeometry,mat);
@@ -79,23 +95,20 @@ sofa4.position.set(1.85, 0.63, 2.6);
 
 //テーブル1を作成
 var table1_g = new THREE.BoxGeometry( 4.8, 0.2, 1.95 );
-var material_4 = new THREE.MeshPhongMaterial({ color: 0x007777 });
-var table1 = new THREE.Mesh( table1_g, material_4);
+var table1 = new THREE.Mesh( table1_g, mat4);
 table1.position.set(0,1.07,-1.1);
 
 //テーブル2を作成
 var table2_g = new THREE.BoxGeometry( 4, 0.1, 1.8 );
-var material_5 = new THREE.MeshPhongMaterial({ color: 0x007777 });
-var table2 = new THREE.Mesh( table2_g, material_5);
+var table2 = new THREE.Mesh( table2_g, mat4);
 table2.position.set(0,0.4,-1.1);
 
 //テーブル足の作成
 var table3_g = new THREE.CylinderGeometry( 0.13, 0.2, 1.0, 20, false);
-var material_6 = new THREE.MeshPhongMaterial({ color: 0xffff00 });
-var table3 = new THREE.Mesh( table3_g, material_6);
-var table4 = new THREE.Mesh( table3_g, material_6);
-var table5 = new THREE.Mesh( table3_g, material_6);
-var table6 = new THREE.Mesh( table3_g, material_6);
+var table3 = new THREE.Mesh( table3_g, mat3);
+var table4 = new THREE.Mesh( table3_g, mat3);
+var table5 = new THREE.Mesh( table3_g, mat3);
+var table6 = new THREE.Mesh( table3_g, mat3);
 table3.position.set(1.93, 0.47,-0.28);
 table4.position.set(1.93, 0.47,-1.85);
 table5.position.set(-1.93, 0.47,-0.28);
