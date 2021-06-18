@@ -36,18 +36,32 @@ function init() {
   directionalLight3.position.set(100, 100, -100);
   scene.add(directionalLight3);
 
+  var textureLoader = new THREE.TextureLoader();  
+  var texture = textureLoader.load("flooring.jpg");
+  var mat = new THREE.MeshPhongMaterial();
+  mat.map = texture;
+  var bump = textureLoader.load("flooring_b.jpg");
+  mat.bumpMap = bump;
+  mat.bumpscale = 0.2;
+
+  var textureLoader2 = new THREE.TextureLoader(); 
+  var texture2 = textureLoader2.load("sofa.jpg");
+  var mat2 = new THREE.MeshPhongMaterial();
+  mat2.map = texture2;
+  var bump2 = textureLoader2.load("sofa.jpg");
+  mat2.bumpMap = bump2;
+  mat2.bumpscale = 0.2;
+
 
 // 平面を作成
 var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
-var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
-var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+var plane = new THREE.Mesh(planeGeometry,mat);
 plane.rotation.set( -Math.PI/2, 0, 0 );
 plane.position.set(0,0,0);
 
 // 部品1を作成
 var sofa1_g = new THREE.BoxGeometry( 3, 2.4, 0.7);
-var material_1 = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-var sofa1 = new THREE.Mesh(sofa1_g, material_1);
+var sofa1 = new THREE.Mesh(sofa1_g, mat2);
 sofa1.position.set(0, 1.2,3.6);//allの中心が原点になる
 
 //部品2を作成
