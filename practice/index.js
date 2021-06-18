@@ -42,7 +42,15 @@ function init() {
   mat.map = texture;
   var bump = textureLoader.load("flooring.jpg");
   mat.bumpMap = bump;
-  mat.bumpscale = 0.2;
+  mat.bumpscale = 0.1;
+
+  var textureLoader2 = new THREE.TextureLoader();  
+  var texture2 = textureLoader2.load("sofa.jpg");
+  var mat2 = new THREE.MeshPhongMaterial();
+  mat2.map = texture2;
+  var bump2 = textureLoader.load("sofa.jpg");
+  mat2.bumpMap = bump2;
+  mat2.bumpscale = 0.2;
 
 // 平面を作成
 var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
@@ -52,24 +60,21 @@ plane.position.set(0,0,0);
 
 // 部品1を作成
 var sofa1_g = new THREE.BoxGeometry( 3, 2.4, 0.7);
-var material_1 = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-var sofa1 = new THREE.Mesh(sofa1_g, material_1);
-sofa1.position.set(0, 1.2,3.6);//allの中心が原点になる
+var sofa1 = new THREE.Mesh(sofa1_g, mat2);
+sofa1.position.set(0, 1.2,3.6);
 
 //部品2を作成
 var sofa2_g = new THREE.BoxGeometry( 3, 0.8, 1.8);
-var material_2 = new THREE.MeshPhongMaterial({ color: 0xff0000 });
-var sofa2 = new THREE.Mesh( sofa2_g, material_1);
+var sofa2 = new THREE.Mesh( sofa2_g, mat2);
 sofa2.position.set(0,0.4,2.35);
 
 //部品3を作成
 var sofa3_g = new THREE.BoxGeometry( 0.7, 1.3, 2.5);
-var material_3 = new THREE.MeshPhongMaterial({ color: 0x770077 });
-var sofa3 = new THREE.Mesh( sofa3_g, material_3);
+var sofa3 = new THREE.Mesh( sofa3_g, mat2);
 sofa3.position.set(-1.85, 0.63, 2.6);
 
 //部品4を作成
-var sofa4 = new THREE.Mesh( sofa3_g, material_3);
+var sofa4 = new THREE.Mesh( sofa3_g, mat2);
 sofa4.position.set(1.85, 0.63, 2.6);
 
 //テーブル1を作成
@@ -96,20 +101,20 @@ table4.position.set(1.93, 0.47,-1.85);
 table5.position.set(-1.93, 0.47,-0.28);
 table6.position.set(-1.93, 0.47,-1.85);
 
-const pengin = new THREE.Group();
- pengin.add(sofa1); 
- pengin.add(sofa2); 
- pengin.add(sofa3); 
- pengin.add(sofa4); 
- pengin.add(table1); 
- pengin.add(table2); 
- pengin.add(table3); 
- pengin.add(table4); 
- pengin.add(table5); 
- pengin.add(table6);
- pengin.add(plane);
- pengin.position.set(0,0,0);//ペンギングループの原点の位置
-scene.add(pengin);
+const liv = new THREE.Group();
+ liv.add(sofa1); 
+ liv.add(sofa2); 
+ liv.add(sofa3); 
+ liv.add(sofa4); 
+ liv.add(table1); 
+ liv.add(table2); 
+ liv.add(table3); 
+ liv.add(table4); 
+ liv.add(table5); 
+ liv.add(table6);
+ liv.add(plane);
+ liv.position.set(0,0,0);//ペンギングループの原点の位置
+scene.add(liv);
  //全体のオブジェクト
 
 
