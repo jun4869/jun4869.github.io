@@ -76,7 +76,6 @@ function init() {
   sprite.position.x = 2.3;
   sprite.position.y = 0;
   sprite.position.z = 0;
-  sprite.scale.set(100,100,100);
 
 // 平面を作成
 var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
