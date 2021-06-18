@@ -42,7 +42,7 @@ function init() {
   mat.map = texture;
   var bump = textureLoader.load("flooring.jpg");
   mat.bumpMap = bump;
-  mat.bumpscale = 0.1;
+  mat.bumpscale = 0.02;
 
   var textureLoader2 = new THREE.TextureLoader();  
   var texture2 = textureLoader2.load("sofa.jpg");
@@ -50,7 +50,7 @@ function init() {
   mat2.map = texture2;
   var bump2 = textureLoader.load("sofa.jpg");
   mat2.bumpMap = bump2;
-  mat2.bumpscale = 0.2;
+  mat2.bumpscale = 0.04;
 
   var textureLoader3 = new THREE.TextureLoader();  
   var texture3 = textureLoader2.load("table_foot.jpg");
@@ -67,6 +67,16 @@ function init() {
   var bump4 = textureLoader.load("wood.jpg");
   mat4.bumpMap = bump4;
   mat4.bumpscale = 0.03;
+
+  var textureLoader5 = new THREE.TextureLoader();  
+  var texture = textureLoader5.load("plant.png");
+  const material = new THREE.SpriteMaterial({ map: texture,});
+
+  const sprite = new THREE.Sprite(material);
+  sprite.position.x = 2.3;
+  sprite.position.y = 0;
+  sprite.position.z = 0;
+  sprite.scale.set(100,100,100);
 
 // 平面を作成
 var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
@@ -126,6 +136,7 @@ const liv = new THREE.Group();
  liv.add(table5); 
  liv.add(table6);
  liv.add(plane);
+ liv.add(sprite);
  liv.position.set(0,0,0);//ペンギングループの原点の位置
 scene.add(liv);
  //全体のオブジェクト
