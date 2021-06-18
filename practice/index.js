@@ -40,14 +40,13 @@ function init() {
   var texture = textureLoader.load("flooring.jpg");
   var mat = new THREE.MeshPhongMaterial();
   mat.map = texture;
-  var bump = textureLoader.load("flooring_b.jpg");
+  var bump = textureLoader.load("flooring.jpg");
   mat.bumpMap = bump;
   mat.bumpscale = 0.2;
 
 // 平面を作成
 var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
-var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
-var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+var plane = new THREE.Mesh(planeGeometry,mat);
 plane.rotation.set( -Math.PI/2, 0, 0 );
 plane.position.set(0,0,0);
 
