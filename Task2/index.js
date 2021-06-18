@@ -36,74 +36,109 @@ function init() {
   directionalLight3.position.set(100, 100, -100);
   scene.add(directionalLight3);
 
+  var textureLoader = new THREE.TextureLoader();  
+  var texture = textureLoader.load("img/flooring.jpg");
+  var mat = new THREE.MeshPhongMaterial();
+  mat.map = texture;
+  var bump = textureLoader.load("img/flooring.jpg");
+  mat.bumpMap = bump;
+  mat.bumpscale = 0.02;
+
+  var textureLoader2 = new THREE.TextureLoader();  
+  var texture2 = textureLoader2.load("img/sofa.jpg");
+  var mat2 = new THREE.MeshPhongMaterial();
+  mat2.map = texture2;
+  var bump2 = textureLoader.load("img/sofa.jpg");
+  mat2.bumpMap = bump2;
+  mat2.bumpscale = 0.04;
+
+  var textureLoader3 = new THREE.TextureLoader();  
+  var texture3 = textureLoader2.load("img/table_foot.jpg");
+  var mat3 = new THREE.MeshPhongMaterial();
+  mat3.map = texture3;
+  var bump3 = textureLoader.load("img/table_foot.jpg");
+  mat3.bumpMap = bump3;
+  mat3.bumpscale = 0.08;
+
+  var textureLoader4 = new THREE.TextureLoader();  
+  var texture4 = textureLoader4.load("img/wood.jpg");
+  var mat4 = new THREE.MeshPhongMaterial();
+  mat4.map = texture4;
+  var bump4 = textureLoader.load("img/wood.jpg");
+  mat4.bumpMap = bump4;
+  mat4.bumpscale = 0.03;
+
+  var textureLoader5 = new THREE.TextureLoader();  
+  var texture = textureLoader5.load("img/plant.png");
+  const material = new THREE.SpriteMaterial({ map: texture,});
+
+  const sprite = new THREE.Sprite(material);
+  sprite.position.x = 2.3;
+  sprite.position.y = 0;
+  sprite.position.z = 0;
+  sprite.scale.set(100,100,100);
 
 // 平面を作成
 var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
-var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
-var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+var plane = new THREE.Mesh(planeGeometry,mat);
 plane.rotation.set( -Math.PI/2, 0, 0 );
 plane.position.set(0,0,0);
 
 // 部品1を作成
 var sofa1_g = new THREE.BoxGeometry( 3, 2.4, 0.7);
-var material_1 = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-var sofa1 = new THREE.Mesh(sofa1_g, material_1);
-sofa1.position.set(0, 1.2,3.6);//allの中心が原点になる
+var sofa1 = new THREE.Mesh(sofa1_g, mat2);
+sofa1.position.set(0, 1.2,3.6);
 
 //部品2を作成
 var sofa2_g = new THREE.BoxGeometry( 3, 0.8, 1.8);
-var material_2 = new THREE.MeshPhongMaterial({ color: 0xff0000 });
-var sofa2 = new THREE.Mesh( sofa2_g, material_1);
+var sofa2 = new THREE.Mesh( sofa2_g, mat2);
 sofa2.position.set(0,0.4,2.35);
 
 //部品3を作成
 var sofa3_g = new THREE.BoxGeometry( 0.7, 1.3, 2.5);
-var material_3 = new THREE.MeshPhongMaterial({ color: 0x770077 });
-var sofa3 = new THREE.Mesh( sofa3_g, material_3);
+var sofa3 = new THREE.Mesh( sofa3_g, mat2);
 sofa3.position.set(-1.85, 0.63, 2.6);
 
 //部品4を作成
-var sofa4 = new THREE.Mesh( sofa3_g, material_3);
+var sofa4 = new THREE.Mesh( sofa3_g, mat2);
 sofa4.position.set(1.85, 0.63, 2.6);
 
 //テーブル1を作成
 var table1_g = new THREE.BoxGeometry( 4.8, 0.2, 1.95 );
-var material_4 = new THREE.MeshPhongMaterial({ color: 0x007777 });
-var table1 = new THREE.Mesh( table1_g, material_4);
+var table1 = new THREE.Mesh( table1_g, mat4);
 table1.position.set(0,1.07,-1.1);
 
 //テーブル2を作成
 var table2_g = new THREE.BoxGeometry( 4, 0.1, 1.8 );
-var material_5 = new THREE.MeshPhongMaterial({ color: 0x007777 });
-var table2 = new THREE.Mesh( table2_g, material_5);
+var table2 = new THREE.Mesh( table2_g, mat4);
 table2.position.set(0,0.4,-1.1);
 
 //テーブル足の作成
 var table3_g = new THREE.CylinderGeometry( 0.13, 0.2, 1.0, 20, false);
-var material_6 = new THREE.MeshPhongMaterial({ color: 0xffff00 });
-var table3 = new THREE.Mesh( table3_g, material_6);
-var table4 = new THREE.Mesh( table3_g, material_6);
-var table5 = new THREE.Mesh( table3_g, material_6);
-var table6 = new THREE.Mesh( table3_g, material_6);
+var table3 = new THREE.Mesh( table3_g, mat3);
+var table4 = new THREE.Mesh( table3_g, mat3);
+var table5 = new THREE.Mesh( table3_g, mat3);
+var table6 = new THREE.Mesh( table3_g, mat3);
 table3.position.set(1.93, 0.47,-0.28);
 table4.position.set(1.93, 0.47,-1.85);
 table5.position.set(-1.93, 0.47,-0.28);
 table6.position.set(-1.93, 0.47,-1.85);
 
-const pengin = new THREE.Group();
- pengin.add(sofa1); 
- pengin.add(sofa2); 
- pengin.add(sofa3); 
- pengin.add(sofa4); 
- pengin.add(table1); 
- pengin.add(table2); 
- pengin.add(table3); 
- pengin.add(table4); 
- pengin.add(table5); 
- pengin.add(table6);
- pengin.add(plane);
- pengin.position.set(0,0,0);//ペンギングループの原点の位置
-scene.add(pengin);
+const liv = new THREE.Group();
+ liv.add(sofa1); 
+ liv.add(sofa2); 
+ liv.add(sofa3); 
+ liv.add(sofa4); 
+ liv.add(table1); 
+ liv.add(table2); 
+ liv.add(table3); 
+ liv.add(table4); 
+ liv.add(table5); 
+ liv.add(table6);
+ liv.add(plane);
+ liv.add(sprite);
+ liv.position.set(0,0,0);//ペンギングループの原点の位置
+scene.add(liv);
  //全体のオブジェクト
 
 
