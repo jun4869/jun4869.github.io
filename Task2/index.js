@@ -10,7 +10,7 @@ function init() {
     canvas: document.querySelector('#myCanvas')
   });
   renderer.setSize(width, height);
-  renderer.setClearColor(0xffffff);
+  renderer.setClearColor(0xeeeeff);
 
   // シーンを作成
   const scene = new THREE.Scene();
