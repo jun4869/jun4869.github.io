@@ -68,11 +68,32 @@ function init() {
   mat4.bumpMap = bump4;
   mat4.bumpscale = 0.03;
 
+  var textureLoader5 = new THREE.TextureLoader();  
+  var texture5 = textureLoader5.load("concrete.jpg");
+  var mat5 = new THREE.MeshPhongMaterial();
+  mat5.map = texture5;
+  var bump5 = textureLoader.load("concrete.jpg");
+  mat5.bumpMap = bump5;
+  mat5.bumpscale = 0.01;
+
 // 平面を作成
 var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
 var plane = new THREE.Mesh(planeGeometry,mat);
 plane.rotation.set( -Math.PI/2, 0, 0 );
 plane.position.set(0,0,0);
+
+var planeGeometry2 = new THREE.PlaneGeometry(8,4,8,4);
+var plane2 = new THREE.Mesh(planeGeometry2,mat5);
+plane2.rotation.set( 0, -Math.PI/2, 0 );
+plane2.position.set(4, 2, 0);
+
+var plane3 = new THREE.Mesh(planeGeometry2,mat5);
+plane3.rotation.set( 0, -Math.PI/2, 0 );
+plane3.position.set(-4, 2, 0);
+
+var planeGeometry3 = new THREE.PlaneGeometry(8,4,8,4);
+var plane4 = new THREE.Mesh(planeGeometry3,mat5);
+plane4.position.set(0, 2, 4);
 
 // 部品1を作成
 var sofa1_g = new THREE.BoxGeometry( 3, 2.4, 0.7);
@@ -126,6 +147,9 @@ const liv = new THREE.Group();
  liv.add(table5); 
  liv.add(table6);
  liv.add(plane);
+ liv.add(plane2);
+ liv.add(plane3)
+ liv.add(plane4);
  liv.position.set(0,0,0);//ペンギングループの原点の位置
 scene.add(liv);
  //全体のオブジェクト
