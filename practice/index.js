@@ -156,8 +156,8 @@ var sp2 = new THREE.Mesh( sp_g, mat5);
 sp.position.set(2.2, 1.7, -3.5);
 sp2.position.set(-2.2, 1.7, -3.5);
 
-var coneGeometry = new THREE.CylinderGeometry( 0, 0.16, 0.2, 32);
-var coneGeometry2 = new THREE.CylinderGeometry( 0, 0.1, 0.2, 32);
+var coneGeometry = new THREE.CylinderGeometry( 0, 0.1, 0.2, 32);
+var coneGeometry2 = new THREE.CylinderGeometry( 0, 0.16, 0.2, 32);
 var coneMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
 var cone = new THREE.Mesh(coneGeometry, coneMaterial);
 var cone3 = new THREE.Mesh(coneGeometry, coneMaterial);
@@ -167,9 +167,9 @@ cone.rotation.set(-Math.PI/2, 0, 0 );
 cone2.rotation.set(-Math.PI/2, 0, 0 );
 cone3.rotation.set(-Math.PI/2, 0, 0 );
 cone4.rotation.set(-Math.PI/2, 0, 0 );
-cone.position.set(2.2, 1.9, -2.94);
+cone.position.set(2.2, 1.84, -2.94);
 cone2.position.set(2.2, 1.4, -2.94);
-cone3.position.set(-2.2, 1.9, -2.94);
+cone3.position.set(-2.2, 1.84, -2.94);
 cone4.position.set(-2.2, 1.4, -2.94);
 
 var textureLoader6 = new THREE.TextureLoader();  
