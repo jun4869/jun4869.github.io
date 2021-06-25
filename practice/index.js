@@ -42,7 +42,7 @@ function init() {
   mat.map = texture;
   var bump = textureLoader.load("flooring.jpg");
   mat.bumpMap = bump;
-  mat.bumpscale = 0.02;
+  mat.bumpscale = 0.01;
 
   var textureLoader2 = new THREE.TextureLoader();  
   var texture2 = textureLoader2.load("sofa.jpg");
@@ -77,52 +77,39 @@ function init() {
   mat5.bumpscale = 0.01;
 
 // 平面を作成
-var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
+var planeGeometry = new THREE.PlaneGeometry(9,9,9,9);
 var plane = new THREE.Mesh(planeGeometry,mat);
 plane.rotation.set( -Math.PI/2, 0, 0 );
 plane.position.set(0,0,0);
 
-var planeGeometry2 = new THREE.PlaneGeometry(8,4,8,4);
-var plane2 = new THREE.Mesh(planeGeometry2,mat5);
-plane2.rotation.set( 0, -Math.PI/2, 0 );
-plane2.position.set(4, 2, 0);
-
-var plane3 = new THREE.Mesh(planeGeometry2,mat5);
-plane3.rotation.set( 0, -Math.PI/2, 0 );
-plane3.position.set(-4, 2, 0);
-
-var planeGeometry3 = new THREE.PlaneGeometry(8,4,8,4);
-var plane4 = new THREE.Mesh(planeGeometry3,mat5);
-plane4.position.set(0, 2, 4);
-
 // 部品1を作成
 var sofa1_g = new THREE.BoxGeometry( 3, 2.4, 0.7);
 var sofa1 = new THREE.Mesh(sofa1_g, mat2);
-sofa1.position.set(0, 1.2,3.6);
+sofa1.position.set(0, 1.2,4);
 
 //部品2を作成
 var sofa2_g = new THREE.BoxGeometry( 3, 0.8, 1.8);
 var sofa2 = new THREE.Mesh( sofa2_g, mat2);
-sofa2.position.set(0,0.4,2.35);
+sofa2.position.set(0,0.4,2.75);
 
 //部品3を作成
 var sofa3_g = new THREE.BoxGeometry( 0.7, 1.3, 2.5);
 var sofa3 = new THREE.Mesh( sofa3_g, mat2);
-sofa3.position.set(-1.85, 0.63, 2.6);
+sofa3.position.set(-1.85, 0.63, 3);
 
 //部品4を作成
 var sofa4 = new THREE.Mesh( sofa3_g, mat2);
-sofa4.position.set(1.85, 0.63, 2.6);
+sofa4.position.set(1.85, 0.63, 3);
 
 //テーブル1を作成
 var table1_g = new THREE.BoxGeometry( 4.8, 0.2, 1.95 );
 var table1 = new THREE.Mesh( table1_g, mat4);
-table1.position.set(0,1.07,-1.1);
+table1.position.set(0,1.07,-0.58);
 
 //テーブル2を作成
 var table2_g = new THREE.BoxGeometry( 4, 0.1, 1.8 );
 var table2 = new THREE.Mesh( table2_g, mat4);
-table2.position.set(0,0.4,-1.1);
+table2.position.set(0,0.4,-0.58);
 
 //テーブル足の作成
 var table3_g = new THREE.CylinderGeometry( 0.13, 0.2, 1.0, 20, false);
@@ -130,10 +117,40 @@ var table3 = new THREE.Mesh( table3_g, mat3);
 var table4 = new THREE.Mesh( table3_g, mat3);
 var table5 = new THREE.Mesh( table3_g, mat3);
 var table6 = new THREE.Mesh( table3_g, mat3);
-table3.position.set(1.93, 0.47,-0.28);
-table4.position.set(1.93, 0.47,-1.85);
-table5.position.set(-1.93, 0.47,-0.28);
-table6.position.set(-1.93, 0.47,-1.85);
+table3.position.set(1.93, 0.47,0.22);
+table4.position.set(1.93, 0.47,-1.35);
+table5.position.set(-1.93, 0.47,0.22);
+table6.position.set(-1.93, 0.47,-1.35);
+
+//テレビ台
+var dai_g = new THREE.BoxGeometry( 4, 1.2, 1.8);
+var dai = new THREE.Mesh( dai_g, mat2);
+dai.position.set(0,0.55, -3.5);
+
+//テレビ部品1
+var tv_g = new THREE.BoxGeometry( 1, 0.06, 0.8);
+var tv = new THREE.Mesh( tv_g, mat2);
+tv.position.set(0, 1.18, -3.5);
+
+//テレビ部品2
+var tv2_g = new THREE.BoxGeometry( 1, 0.08, 0.8);
+var tv2 = new THREE.Mesh( tv2_g, mat2);
+tv2.position.set(0, 1.18, -3.5);
+
+//テレビ部品3
+var tv3_g = new THREE.BoxGeometry( 0.4, 1.4, 0.1);
+var tv3 = new THREE.Mesh( tv3_g, mat2);
+tv3.position.set(0, 1.18, -3.6);
+
+//テレビ部品4
+var tv4_g = new THREE.BoxGeometry( 0.7, 0.5, 0.15);
+var tv4 = new THREE.Mesh( tv4_g, mat2);
+tv4.position.set(0, 1.85, -3.6);
+
+//テレビ部品5
+var tv5_g = new THREE.BoxGeometry( 3, 1.4, 0.08);
+var tv5 = new THREE.Mesh( tv5_g, mat2);
+tv5.position.set(0, 2, -3.5);
 
 const liv = new THREE.Group();
  liv.add(sofa1); 
@@ -146,10 +163,13 @@ const liv = new THREE.Group();
  liv.add(table4); 
  liv.add(table5); 
  liv.add(table6);
+ liv.add(dai);
+ liv.add(tv);
+ liv.add(tv2);
+ liv.add(tv3);
+ liv.add(tv4);
+ liv.add(tv5);
  liv.add(plane);
- liv.add(plane2);
- liv.add(plane3)
- liv.add(plane4);
  liv.position.set(0,0,0);//ペンギングループの原点の位置
 scene.add(liv);
  //全体のオブジェクト
