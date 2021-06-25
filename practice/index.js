@@ -177,7 +177,7 @@ var texture6 = textureLoader6.load("plant.png");
 const material6 = new THREE.SpriteMaterial({ map: texture6,});
 
 const sprite = new THREE.Sprite(material6);
-sprite.scale.set(5, 15, 10)
+sprite.scale.set(2, 5, 4)
 sprite.position.set(-3.5, 0, 2)
 
 const liv = new THREE.Group();
