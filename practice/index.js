@@ -69,12 +69,9 @@ function init() {
   mat4.bumpscale = 0.03;
 
   var textureLoader5 = new THREE.TextureLoader();  
-  var texture5 = textureLoader5.load("concrete.jpg");
+  var texture5 = textureLoader5.load("black.jpg");
   var mat5 = new THREE.MeshPhongMaterial();
   mat5.map = texture5;
-  var bump5 = textureLoader.load("concrete.jpg");
-  mat5.bumpMap = bump5;
-  mat5.bumpscale = 0.01;
 
 // 平面を作成
 var planeGeometry = new THREE.PlaneGeometry(9,9,9,9);
@@ -123,7 +120,7 @@ table5.position.set(-1.93, 0.47,0.22);
 table6.position.set(-1.93, 0.47,-1.35);
 
 //テレビ台
-var dai_g = new THREE.BoxGeometry( 4, 1.2, 1.8);
+var dai_g = new THREE.BoxGeometry( 6, 1.2, 1.8);
 var dai = new THREE.Mesh( dai_g, mat2);
 dai.position.set(0,0.55, -3.5);
 
@@ -134,23 +131,30 @@ tv.position.set(0, 1.18, -3.5);
 
 //テレビ部品2
 var tv2_g = new THREE.BoxGeometry( 1, 0.08, 0.8);
-var tv2 = new THREE.Mesh( tv2_g, mat2);
+var tv2 = new THREE.Mesh( tv2_g, mat5);
 tv2.position.set(0, 1.18, -3.5);
 
 //テレビ部品3
 var tv3_g = new THREE.BoxGeometry( 0.4, 1.4, 0.1);
-var tv3 = new THREE.Mesh( tv3_g, mat2);
+var tv3 = new THREE.Mesh( tv3_g, mat5);
 tv3.position.set(0, 1.18, -3.6);
 
 //テレビ部品4
 var tv4_g = new THREE.BoxGeometry( 0.7, 0.5, 0.15);
-var tv4 = new THREE.Mesh( tv4_g, mat2);
+var tv4 = new THREE.Mesh( tv4_g, mat5);
 tv4.position.set(0, 1.85, -3.6);
 
 //テレビ部品5
 var tv5_g = new THREE.BoxGeometry( 3, 1.4, 0.08);
-var tv5 = new THREE.Mesh( tv5_g, mat2);
+var tv5 = new THREE.Mesh( tv5_g, mat5);
 tv5.position.set(0, 2, -3.5);
+
+//テレビ部品5
+var sp_g = new THREE.BoxGeometry( 0.7, 1.1, 1.3);
+var sp = new THREE.Mesh( sp_g, mat5);
+var sp2 = new THREE.Mesh( sp_g, mat5);
+sp.position.set(2.2, 1.7, -3.5);
+sp2.position.set(-2.2, 1.7, -3.5);
 
 const liv = new THREE.Group();
  liv.add(sofa1); 
@@ -169,6 +173,8 @@ const liv = new THREE.Group();
  liv.add(tv3);
  liv.add(tv4);
  liv.add(tv5);
+ liv.add(sp);
+ liv.add(sp2);
  liv.add(plane);
  liv.position.set(0,0,0);//ペンギングループの原点の位置
 scene.add(liv);
