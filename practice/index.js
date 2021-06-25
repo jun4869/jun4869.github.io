@@ -178,7 +178,7 @@ const material6 = new THREE.SpriteMaterial({ map: texture6,});
 
 const sprite = new THREE.Sprite(material6);
 sprite.scale.set(1, 5, 4)
-sprite.position.set(-3.5, 2.1, -3.5)
+sprite.position.set(-3.7, 2.4, -3.5)
 
 const liv = new THREE.Group();
  liv.add(sofa1); 
