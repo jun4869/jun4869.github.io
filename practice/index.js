@@ -167,9 +167,9 @@ cone.rotation.set(-Math.PI/2, 0, 0 );
 cone2.rotation.set(-Math.PI/2, 0, 0 );
 cone3.rotation.set(-Math.PI/2, 0, 0 );
 cone4.rotation.set(-Math.PI/2, 0, 0 );
-cone.position.set(2.2, 1.85, -2.94);
+cone.position.set(2.2, 1.9, -2.94);
 cone2.position.set(2.2, 1.4, -2.94);
-cone3.position.set(-2.2, 1.85, -2.94);
+cone3.position.set(-2.2, 1.9, -2.94);
 cone4.position.set(-2.2, 1.4, -2.94);
 
 var textureLoader6 = new THREE.TextureLoader();  
@@ -177,7 +177,8 @@ var texture6 = textureLoader6.load("plant.png");
 const material6 = new THREE.SpriteMaterial({ map: texture6,});
 
 const sprite = new THREE.Sprite(material6);
-sprite.position.set(-3.5, 1,4, -3.5)
+sprite.scale.set(5, 15, 10)
+sprite.position.set(-3.5, 0, 2)
 
 const liv = new THREE.Group();
  liv.add(sofa1); 
