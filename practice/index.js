@@ -121,7 +121,7 @@ table6.position.set(-1.93, 0.47,-1.35);
 
 //テレビ台
 var dai_g = new THREE.BoxGeometry( 6, 1.2, 1.8);
-var dai = new THREE.Mesh( dai_g, mat2);
+var dai = new THREE.Mesh( dai_g, mat4);
 dai.position.set(0,0.55, -3.5);
 
 //テレビ部品1
@@ -156,6 +156,29 @@ var sp2 = new THREE.Mesh( sp_g, mat5);
 sp.position.set(2.2, 1.7, -3.5);
 sp2.position.set(-2.2, 1.7, -3.5);
 
+var coneGeometry = new THREE.CylinderGeometry( 0, 0.16, 0.2, 32);
+var coneGeometry2 = new THREE.CylinderGeometry( 0, 0.1, 0.2, 32);
+var coneMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
+var cone = new THREE.Mesh(coneGeometry, coneMaterial);
+var cone3 = new THREE.Mesh(coneGeometry, coneMaterial);
+var cone2 = new THREE.Mesh(coneGeometry2, coneMaterial);
+var cone4 = new THREE.Mesh(coneGeometry2, coneMaterial);
+cone.rotation.set(-Math.PI/2, 0, 0 );
+cone2.rotation.set(-Math.PI/2, 0, 0 );
+cone3.rotation.set(-Math.PI/2, 0, 0 );
+cone4.rotation.set(-Math.PI/2, 0, 0 );
+cone.position.set(2.2, 1.85, -2.94);
+cone2.position.set(2.2, 1.4, -2.94);
+cone3.position.set(-2.2, 1.85, -2.94);
+cone4.position.set(-2.2, 1.4, -2.94);
+
+var textureLoader6 = new THREE.TextureLoader();  
+var texture6 = textureLoader6.load("plant.png");
+const material6 = new THREE.SpriteMaterial({ map: texture6,});
+
+const sprite = new THREE.Sprite(material6);
+sprite.position.set(-3.5, 1,4, -3.5)
+
 const liv = new THREE.Group();
  liv.add(sofa1); 
  liv.add(sofa2); 
@@ -175,7 +198,12 @@ const liv = new THREE.Group();
  liv.add(tv5);
  liv.add(sp);
  liv.add(sp2);
+ liv.add(cone);
+ liv.add(cone2);
+ liv.add(cone3);
+ liv.add(cone4);
  liv.add(plane);
+ liv.add(sprite);
  liv.position.set(0,0,0);//ペンギングループの原点の位置
 scene.add(liv);
  //全体のオブジェクト
