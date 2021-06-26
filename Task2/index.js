@@ -69,12 +69,12 @@ function init() {
   mat4.bumpscale = 0.03;
 
   var textureLoader5 = new THREE.TextureLoader();  
-  var texture5 = textureLoader5.load("black.jpg");
+  var texture5 = textureLoader5.load("img/black.jpg");
   var mat5 = new THREE.MeshPhongMaterial();
   mat5.map = texture5;
 
 // 平面を作成
-var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
+var planeGeometry = new THREE.PlaneGeometry(9,9,9,9);
 var plane = new THREE.Mesh(planeGeometry,mat);
 plane.rotation.set( -Math.PI/2, 0, 0 );
 plane.position.set(0,0,0);
@@ -82,31 +82,31 @@ plane.position.set(0,0,0);
 // 部品1を作成
 var sofa1_g = new THREE.BoxGeometry( 3, 2.4, 0.7);
 var sofa1 = new THREE.Mesh(sofa1_g, mat2);
-sofa1.position.set(0, 1.2,3.6);
+sofa1.position.set(0, 1.2,4);
 
 //部品2を作成
 var sofa2_g = new THREE.BoxGeometry( 3, 0.8, 1.8);
 var sofa2 = new THREE.Mesh( sofa2_g, mat2);
-sofa2.position.set(0,0.4,2.35);
+sofa2.position.set(0,0.4,2.75);
 
 //部品3を作成
 var sofa3_g = new THREE.BoxGeometry( 0.7, 1.3, 2.5);
 var sofa3 = new THREE.Mesh( sofa3_g, mat2);
-sofa3.position.set(-1.85, 0.63, 2.6);
+sofa3.position.set(-1.85, 0.63, 3);
 
 //部品4を作成
 var sofa4 = new THREE.Mesh( sofa3_g, mat2);
-sofa4.position.set(1.85, 0.63, 2.6);
+sofa4.position.set(1.85, 0.63, 3);
 
 //テーブル1を作成
 var table1_g = new THREE.BoxGeometry( 4.8, 0.2, 1.95 );
 var table1 = new THREE.Mesh( table1_g, mat4);
-table1.position.set(0,1.07,-1.1);
+table1.position.set(0,1.07,-0.58);
 
 //テーブル2を作成
 var table2_g = new THREE.BoxGeometry( 4, 0.1, 1.8 );
 var table2 = new THREE.Mesh( table2_g, mat4);
-table2.position.set(0,0.4,-1.1);
+table2.position.set(0,0.4,-0.58);
 
 //テーブル足の作成
 var table3_g = new THREE.CylinderGeometry( 0.13, 0.2, 1.0, 20, false);
@@ -114,10 +114,11 @@ var table3 = new THREE.Mesh( table3_g, mat3);
 var table4 = new THREE.Mesh( table3_g, mat3);
 var table5 = new THREE.Mesh( table3_g, mat3);
 var table6 = new THREE.Mesh( table3_g, mat3);
-table3.position.set(1.93, 0.47,-0.28);
-table4.position.set(1.93, 0.47,-1.85);
-table5.position.set(-1.93, 0.47,-0.28);
-table6.position.set(-1.93, 0.47,-1.85);
+table3.position.set(1.93, 0.47,0.22);
+table4.position.set(1.93, 0.47,-1.35);
+table5.position.set(-1.93, 0.47,0.22);
+table6.position.set(-1.93, 0.47,-1.35);
+
 //テレビ台
 var dai_g = new THREE.BoxGeometry( 6, 1.2, 1.8);
 var dai = new THREE.Mesh( dai_g, mat4);
@@ -172,7 +173,7 @@ cone3.position.set(-2.2, 1.84, -2.94);
 cone4.position.set(-2.2, 1.4, -2.94);
 
 var textureLoader6 = new THREE.TextureLoader();  
-var texture6 = textureLoader6.load("plant.png");
+var texture6 = textureLoader6.load("img/plant.png");
 const material6 = new THREE.SpriteMaterial({ map: texture6,});
 
 const sprite = new THREE.Sprite(material6);
