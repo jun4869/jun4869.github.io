@@ -205,7 +205,7 @@ const liv = new THREE.Group();
  liv.add(cone4);
  liv.add(plane);
  liv.add(sprite);
- liv.position.set(0,0,0);//ペンギングループの原点の位置
+ liv.position.set(0,0,0);
 scene.add(liv);
  //全体のオブジェクト
 
