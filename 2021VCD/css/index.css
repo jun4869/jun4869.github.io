@@ -12,3 +12,56 @@
   margin: 5px;
   font-family: 'Cherry Swash', cursive;
 }
+
+#motto {
+  margin-bottom: 10px;
+}
+
+.about_shop {
+  font-size: 8px;
+}
+
+.about_shop p {
+  font-size: 12px;
+}
+
+.details {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+#info {
+  width: 45%;
+  text-align: left;
+}
+
+#info h2 {
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #000;
+  font-size: 1.2rem;
+}
+#info dt {
+  margin-right: 10px;
+}
+
+#info dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#info dd {
+  width: calc(100% - 7em);
+}
+
+#info dt,
+#info dd {
+  margin-bottom: 15px;
+}
+
+img {
+  width: 50%;
+  height: 50%;
+}
