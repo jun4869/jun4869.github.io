@@ -4,13 +4,19 @@
 
 .shop {
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  margin: 0 40px;
 }
 
 .shop h1 {
-  font-size: 25px;
+  font-size: 30px;
   margin: 5px;
   font-family: 'Cherry Swash', cursive;
+}
+
+.about {
+  font-weight: 600;
+  padding: 10px 0 10px;
 }
 
 #motto {
@@ -18,11 +24,12 @@
 }
 
 .about_shop {
-  font-size: 8px;
+  font-size: 16px;
+  border: solid 1px;
 }
 
 .about_shop p {
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .details {
