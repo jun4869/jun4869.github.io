@@ -15,6 +15,7 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  border-bottom: solid #000 thin;
 }
 
 .header_image {
@@ -48,10 +49,11 @@ header ul li a:hover,footer ul li a:active {
 footer {
   margin: 0;
   text-align: center;
+  border-top:  solid #000 thin; 
 }
 
 .footer_link {
-  background-color: black;
+  background-color: #fff;
   padding: 20px;
 }
 
@@ -61,7 +63,7 @@ footer ul li {
 }
 
 footer ul li a {
-  color: #fff
+  color: #000;
 }
 
 footer ul li a:link {
@@ -73,9 +75,10 @@ footer ul li a:hover,footer ul li a:active {
 }
 
 .footer_small{
-  background-color: black;
+  background-color: #fff;
   color: #808080;
   margin-top: 0.5px;
   padding: 12px;
   font-size: 0.7rem;
+  border-top:  solid #000 thin; 
 }
