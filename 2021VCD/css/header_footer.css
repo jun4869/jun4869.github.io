@@ -1,20 +1,20 @@
 /* header */
 
 header {
-  margin: 0;
-  background-color: #000;
+  margin-bottom: 3px;
+  background-color:#fff;
 }
 
 .header_logo {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 60px;
 }
 
 .header_content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto 5px;
+  margin: 0 auto;
 }
 
 .header_image {
@@ -32,7 +32,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: #fff;
+  color: #000;
 }
 
 header nav ul li a:link {
@@ -43,10 +43,6 @@ header nav ul li a:link {
 header ul li a:hover,footer ul li a:active {
   opacity: .7;
 }
-
-/* content */
-
-
 /* footer */
 
 footer {
