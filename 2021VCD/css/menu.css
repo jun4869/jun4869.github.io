@@ -1,0 +1,57 @@
+.content {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+h1{
+  text-align: center;
+  margin: 10px 0 10px;
+  font-size: 25px;
+}
+
+.name {
+  margin: 10px;
+  padding-bottom: 5px;
+  border-bottom: solid thin;
+}
+
+.beef, .pig, .bird {
+  margin-bottom: 20px;
+}
+
+.beef ul {
+  margin: 0 auto;
+}
+
+.beef ul li {
+  display: inline-block;
+  width: 30%;
+  height: 250px;
+  list-style: none;
+}
+
+.animal {
+  margin-bottom: 20px;
+}
+
+.pig ul li {
+  display: inline-block;
+  width: 30%;
+  list-style: none;
+}
+
+.bird ul li {
+  display: inline-block;
+  width: 30%;
+  list-style: none;
+}
+
+.description {
+
+}
