@@ -1,3 +1,18 @@
-body {
+
+h1 {
   text-align: center;
+  margin: 15px;
+  font-size: 25px;
+}
+
+form {
+  text-align: center;
+}
+
+div {
+  margin: 15px
+}
+
+span {
+  font-weight: 600;
 }
