@@ -25,24 +25,26 @@
       </div>
   </header>
   
-  <h1>お問い合わせ</h1>
-  <form action="#" post="">
-    <div>
-      <label for="name"><span>お名前</span>:</label>
-      <input id="name" type="text" name="name" placeholder="例) 工大 太郎">
-    </div>
-    <div>
-      <label for="mail"><span>メールアドレス</span>:</label>
-      <input type="email" name="email" id="email" placeholder="例) hogehoge@koudai.jp">
-    </div>
-    <div>
-      <label for="comment"><span>お問い合わせ内容</span>:</label>
-      <textarea name="comment" id="comment" cols="30" rows="10" placeholder="お問い合わせ内容を入力してください"></textarea>
-    </div>
-    <div>
-      <input type="submit" value="送信">
-    </div>
-  </form>
+  <div class="content">
+    <h1>お問い合わせ</h1>
+    <form action="#" post="">
+      <div class="item">
+        <label for="name">お名前</label>
+        <input id="name" type="text" name="name" placeholder="例) 工大 太郎" class="input">
+      </div>
+      <div class="item">
+        <label for="mail">メールアドレス</label>
+        <input type="email" name="email" id="email" placeholder="例) hogehoge@koudai.jp" class="input">
+      </div>
+      <div class="item">
+        <label for="comment">お問い合わせ内容</label>
+        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="お問い合わせ内容を入力してください" class="input"></textarea>
+      </div>
+      <div class="btn"> 
+        <input type="submit" value="送信">
+      </div>
+    </form>
+  </div>
 
   <footer>
     <div class="footer_link">
