@@ -40,11 +40,11 @@ header nav ul li a {
 
 header nav ul li a:link {
   text-decoration: none;
-  color: #808080;
 }
 
 header ul li a:hover,footer ul li a:active {
   opacity: .7;
+  color: red;
 }
 /* footer */
 
