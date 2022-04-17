@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>片平純太郎のポートフォリオサイト</title>
   <meta name="description" content="片平純太郎のポートフォリオサイト">
+  <link rel="icon" href="/images/favicon.ico">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <img src="./images/IMG_0417.JPG" alt="写真アイコン">
+  <header class="wrapper">
+    <img class="photo" src="./images/IMG_0417.JPG" alt="写真アイコン">
     <h1>片平純太郎</h1>
     <p>千葉工業大学 <br>
       情報科学部情報ネットワーク学科 4年<br>
@@ -20,8 +21,8 @@
   </header>
 
   <main>
-    <section>
-      <div>
+    <section class="myskills">
+      <div class="wrapper">
         <h2>My SKILLS</h2>
         <ul>
           <li>HTML5</li>
@@ -35,27 +36,32 @@
         </ul>
       </div>
     </section>
-    <section>
+    <section class="wrapper">
       <h2>WORKS</h2>
-      <img src="./images/掲示板.png" alt="簡易掲示板">
-      <h3>掲示板アプリ</h3>
-      <p>誰でも自由にスレッドを立て、会話が出来ます</p>
-      <img src="./images/cafe.png" alt="カフェサイト">
-      <h3>カフェサイト</h3>
-      <p>架空のカフェのホームページ</p>
-      <img src="./images/cats.png" alt="ネコサイト">
-      <h3>ネコサイト</h3>
-      <p>様々な猫を鑑賞できます</p>
+      <div class="works_box">
+        <img class="works_image" src="./images/Noimage.png" alt="研究課題">
+        <h3>研究課題</h3>
+        <p>思考中...</p>
+      </div>
+      <div class="works_box">
+        <img class="works_image" src="./images/掲示板.png" alt="簡易掲示板">
+        <h3>掲示板アプリ</h3>
+        <p>誰でも自由にスレッドを立て、会話が出来ます</p>
+      </div>
+      <div class="works_box">
+        <img class="works_image" src="./images/cafe.png" alt="カフェサイト">
+        <h3>カフェサイト</h3>
+        <p>架空のカフェのホームページ</p>
+      </div>
+      <div class="works_box">
+        <img class="works_image" src="./images/cats.png" alt="ネコサイト">
+        <h3>ネコサイト</h3>
+        <p>様々な猫を鑑賞できます</p>
+      </div>
     </section>
   </main>
-
-  <p><a href="2021CG-main/index.html">2021_コンピュータグラフィックス</a></p>
-  <hr>
-  <p><a href="2021VCD/index.html">2021_ヴィジュアルコンテンツデザイン</a></p>
-  <hr>
-  <p><a href="WEB/index.html">practice HTML/CSS/JS</a></p>
   <footer>
-    <div>
+    <div class="wrapper">
       <p><small>&copy; 2021 junkata.jp</small></p>
     </div>
   </footer>
